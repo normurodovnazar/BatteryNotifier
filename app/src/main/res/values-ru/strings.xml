@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Батарея полная будильник</string>
+    <string name="stop_ring">СТОП</string>
+    <string name="error">Ошибка</string>
+    <string name="full">Батарея полностью заряжена</string>
+    <string name="stop">Приложение работает. Нажмите, чтобы остановить</string>
+    <string name="start_work">Запустить приложение</string>
+    <string name="per">Вы не можете использовать приложение без предоставления разрешений</string>
+    <string name="t">Нажмите запустить приложение. Приложение уведомит вас, когда батарея полностью разрядится.</string>
+    <string name="started">Приложение работает. Сообщит, что батарея полностью заряжена.</string>
+    <string name="stopped">Приложение перестало работать, вы не получите уведомление, когда батарея полностью заряжена</string>
+    <string name="charging">Зарядка</string>
+    <string name="not_charging_now">Не заряжается</string>
+    <string name="autostart">Включите автозапуск для этого приложения. Приложение будет автоматически уведомлять, когда ваша батарея полностью заряжена, даже если вы не запускаете приложение.</string>
+    <string name="error_netowrk">Ошибка сети.Нажмите, чтобы перезагрузить.</string>
+    <string name="startedNow">Приложение начало работать. Сообщит, что батарея полностью заряжена.</string>
+    <string name="alarmMusic">Изменить музыку будильника</string>
+    <string name="disableVibration">Отключить вибрацию</string>
+    <string name="enableVibration">Включить вибрацию</string>
+</resources>

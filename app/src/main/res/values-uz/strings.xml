@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Batareya to\'lish bildirgichi</string>
+    <string name="t">Ilovani ishga tushirishni bosing.Ilova telefoningiz to\'la quvvatlanganda sizni ogohlantiradi</string>
+    <string name="error">Xatolik</string>
+    <string name="per">Ilovaga ruxsat bermasdan turib undan foydalana olmaysiz</string>
+    <string name="start_work">Ilovani ishga tushirish</string>
+    <string name="started">Ilova ishlayapti.batareya to\'la quvvatlanganda ogohlantiradi</string>
+    <string name="stopped">Batareya bildirgichi ishlashdan to\'xtadi,siz batareya to\'lganda ogohlantirilmaysiz</string>
+    <string name="stop">Ilova ishlamoqda.To\'xtatish uchun bosing</string>
+    <string name="full">Batareya to\'liq quvvatlandi</string>
+    <string name="stop_ring">TO\'XTATISH</string>
+    <string name="charging">Quvvat olyapti</string>
+    <string name="not_charging_now">Quvvat olmayapti</string>
+    <string name="autostart">Ilova uchun avtomatik boshlashni yoqing,shunda agar siz ilovaga kirmasangiz ham sizni batareyangiz to\'lganda ogohlantiradi</string>
+    <string name="error_netowrk">Tarmoq xatoligi.Qayta yuklash uchun bosing</string>
+    <string name="startedNow">Ilova ishlashni boshladi.Batareya to\'la quvvatlanganda ogohlantiradi</string>
+    <string name="enableVibration">Tabranishni yoqish</string>
+    <string name="disableVibration">Tebranishni o\'chirish</string>
+    <string name="alarmMusic">Jiringlash musiqasini o\'zgartirish</string>
+</resources>

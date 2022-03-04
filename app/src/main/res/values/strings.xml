@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Battery full alarm</string>
+    <string name="t">Click start app.App will notify you when your battery is full</string>
+    <string name="error">Error</string>
+    <string name="per">You cannot use app without permission</string>
+    <string name="start_work">Start app</string>
+    <string name="started">App is working.Will notify battery is full</string>
+    <string name="stopped">App is stopped working,you will not get notify when battery is full</string>
+    <string name="stop">App is working.Click to stop</string>
+    <string name="full">Battery is full</string>
+    <string name="stop_ring">STOP</string>
+    <string name="charging">Charging</string>
+    <string name="not_charging_now">Not charging</string>
+    <string name="autostart">Enable autostart for this app.App will automatically notify when your battery is full even if you are not launch app</string>
+    <string name="error_netowrk">Network error.Tap to reload</string>
+    <string name="startedNow">App is started working.Will notify battery is full</string>
+    <string name="enableVibration">Enable vibration</string>
+    <string name="disableVibration">Disable vibration</string>
+    <string name="alarmMusic">Change alarm music</string>
+</resources>
