@@ -1,4 +1,4 @@
-package com.normurodov_nazar.batterynotifier;
+package com.normurodov_nazar.batterynotifier.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,6 +13,10 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.normurodov_nazar.batterynotifier.Functions.Hey;
+import com.normurodov_nazar.batterynotifier.Functions.Key;
+import com.normurodov_nazar.batterynotifier.R;
 
 public class RingStopper extends AppCompatActivity {
     TextView text;

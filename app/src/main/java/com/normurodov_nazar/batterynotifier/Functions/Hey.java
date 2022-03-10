@@ -1,4 +1,4 @@
-package com.normurodov_nazar.batterynotifier;
+package com.normurodov_nazar.batterynotifier.Functions;
 
 import android.app.Activity;
 import android.app.AlarmManager;
@@ -21,6 +21,11 @@ import android.widget.Toast;
 
 import androidx.core.app.NotificationCompat;
 
+import com.normurodov_nazar.batterynotifier.Receivers.AlarmReceiver;
+import com.normurodov_nazar.batterynotifier.R;
+import com.normurodov_nazar.batterynotifier.Activities.RingStopper;
+import com.normurodov_nazar.batterynotifier.Receivers.StopRingReceiver;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -38,10 +43,19 @@ public class Hey{
     }
 
     public static void showNotification(Context context) {
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(context,0,new Intent(context, StopRingReceiver.class),PendingIntent.FLAG_IMMUTABLE|PendingIntent.FLAG_UPDATE_CURRENT);
-        PendingIntent activity = PendingIntent.getActivity(context,0,new Intent(context, RingStopper.class),PendingIntent.FLAG_IMMUTABLE|PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntent;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
+            pendingIntent = PendingIntent.getBroadcast(context,0,new Intent(context, StopRingReceiver.class),PendingIntent.FLAG_MUTABLE|PendingIntent.FLAG_ONE_SHOT);
+        }else {
+            pendingIntent = PendingIntent.getBroadcast(context,0,new Intent(context, StopRingReceiver.class),PendingIntent.FLAG_IMMUTABLE|PendingIntent.FLAG_ONE_SHOT);
+        }
+        PendingIntent activity;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
+            activity = PendingIntent.getActivity(context,0,new Intent(context, RingStopper.class),PendingIntent.FLAG_MUTABLE|PendingIntent.FLAG_UPDATE_CURRENT);
+        }else {
+            activity = PendingIntent.getActivity(context,0,new Intent(context, RingStopper.class),PendingIntent.FLAG_IMMUTABLE|PendingIntent.FLAG_UPDATE_CURRENT);
+        }
         NotificationCompat.Action action = new NotificationCompat.Action(null,context.getString(R.string.stop_ring),pendingIntent);
-
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "full")
                 .setAutoCancel(true)
                 .setSmallIcon(R.drawable.ic_a)

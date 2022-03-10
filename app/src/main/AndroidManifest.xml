@@ -29,7 +29,7 @@
         android:theme="@style/Theme.BatteryNotifier">
 
         <receiver
-            android:name=".BootReceiver"
+            android:name=".Receivers.BootReceiver"
             android:enabled="true"
             android:exported="true"
             android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
@@ -50,18 +50,18 @@
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
 
         <receiver
-            android:name=".StopRingReceiver"
+            android:name=".Receivers.StopRingReceiver"
             android:enabled="true"
             android:exported="false" />
 
         <activity
-            android:name=".RingStopper"
+            android:name=".Activities.RingStopper"
             android:exported="false" />
 
-        <receiver android:name=".AlarmReceiver" />
+        <receiver android:name=".Receivers.AlarmReceiver" />
 
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

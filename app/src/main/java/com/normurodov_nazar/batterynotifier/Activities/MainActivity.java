@@ -1,4 +1,4 @@
-package com.normurodov_nazar.batterynotifier;
+package com.normurodov_nazar.batterynotifier.Activities;
 
 import android.Manifest;
 import android.app.AlarmManager;
@@ -30,6 +30,10 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
+import com.normurodov_nazar.batterynotifier.Functions.Hey;
+import com.normurodov_nazar.batterynotifier.Functions.Key;
+import com.normurodov_nazar.batterynotifier.R;
+import com.normurodov_nazar.batterynotifier.Receivers.AlarmReceiver;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -106,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
                 super.onAdFailedToLoad(loadAdError);
                 showError();
                 Hey.print("loadAdError",loadAdError.getMessage());
-                if (loadAdError.getCode() == 0) adError.setText(getString(R.string.error_netowrk));
+                if (loadAdError.getCode() == 0) adError.setText(getString(R.string.error_network));
                 else {
                     String a = getString(R.string.error) + ":" + loadAdError.getMessage();
                     adError.setText(a);
@@ -162,11 +166,12 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
                 Hey.showToast(this,e.getLocalizedMessage());
             }
-            if (file != null)
+            if (file != null) {
                 if (file.exists()) {
                     preferences.edit().putString(Key.path,file.getPath()).apply();
-                    Hey.showToast(this, "Selected");
-                }
+                    Hey.showToast(this, getString(R.string.selected));
+                }else Hey.showToast(this, getString(R.string.error));
+            }
         }
     }
 
@@ -229,15 +234,20 @@ public class MainActivity extends AppCompatActivity {
 
     private void getPermission() {
         if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
-            requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.SET_ALARM, Manifest.permission.VIBRATE, Manifest.permission.INTERNET}, 1);
+            requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
         } else initVars();
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) initVars();
-        else {
+        if (requestCode == 1 && grantResults.length==1) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) initVars();
+            else {
+                Toast.makeText(getApplicationContext(), getString(R.string.per), Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        }else {
             Toast.makeText(getApplicationContext(), getString(R.string.per), Toast.LENGTH_SHORT).show();
             finish();
         }

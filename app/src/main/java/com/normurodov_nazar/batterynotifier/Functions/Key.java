@@ -1,4 +1,4 @@
-package com.normurodov_nazar.batterynotifier;
+package com.normurodov_nazar.batterynotifier.Functions;
 
 public class Key {
     public static final String vibration = "Vibration";

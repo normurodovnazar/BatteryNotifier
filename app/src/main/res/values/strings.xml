@@ -12,9 +12,10 @@
     <string name="charging">Charging</string>
     <string name="not_charging_now">Not charging</string>
     <string name="autostart">Enable autostart for this app.App will automatically notify when your battery is full even if you are not launch app</string>
-    <string name="error_netowrk">Network error.Tap to reload</string>
+    <string name="error_network">Network error.Tap to reload</string>
     <string name="startedNow">App is started working.Will notify battery is full</string>
     <string name="enableVibration">Enable vibration</string>
     <string name="disableVibration">Disable vibration</string>
     <string name="alarmMusic">Change alarm music</string>
+    <string name="selected">Selected</string>
 </resources>

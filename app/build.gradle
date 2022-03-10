@@ -10,8 +10,8 @@ android {
         applicationId "com.normurodov_nazar.batterynotifier"
         minSdkVersion 23
         targetSdkVersion 31
-        versionCode 5
-        versionName "2.3"
+        versionCode 6
+        versionName "2.4"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

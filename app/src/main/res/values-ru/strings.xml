@@ -13,9 +13,10 @@
     <string name="charging">Зарядка</string>
     <string name="not_charging_now">Не заряжается</string>
     <string name="autostart">Включите автозапуск для этого приложения. Приложение будет автоматически уведомлять, когда ваша батарея полностью заряжена, даже если вы не запускаете приложение.</string>
-    <string name="error_netowrk">Ошибка сети.Нажмите, чтобы перезагрузить.</string>
+    <string name="error_network">Ошибка сети.Нажмите, чтобы перезагрузить.</string>
     <string name="startedNow">Приложение начало работать. Сообщит, что батарея полностью заряжена.</string>
     <string name="alarmMusic">Изменить музыку будильника</string>
     <string name="disableVibration">Отключить вибрацию</string>
     <string name="enableVibration">Включить вибрацию</string>
+    <string name="selected">Выбрано</string>
 </resources>

@@ -1,9 +1,11 @@
-package com.normurodov_nazar.batterynotifier;
+package com.normurodov_nazar.batterynotifier.Receivers;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.BatteryManager;
+
+import com.normurodov_nazar.batterynotifier.Functions.Hey;
 
 import java.util.Calendar;
 

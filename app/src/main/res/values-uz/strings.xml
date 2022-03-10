@@ -13,9 +13,10 @@
     <string name="charging">Quvvat olyapti</string>
     <string name="not_charging_now">Quvvat olmayapti</string>
     <string name="autostart">Ilova uchun avtomatik boshlashni yoqing,shunda agar siz ilovaga kirmasangiz ham sizni batareyangiz to\'lganda ogohlantiradi</string>
-    <string name="error_netowrk">Tarmoq xatoligi.Qayta yuklash uchun bosing</string>
+    <string name="error_network">Tarmoq xatoligi.Qayta yuklash uchun bosing</string>
     <string name="startedNow">Ilova ishlashni boshladi.Batareya to\'la quvvatlanganda ogohlantiradi</string>
     <string name="enableVibration">Tabranishni yoqish</string>
     <string name="disableVibration">Tebranishni o\'chirish</string>
     <string name="alarmMusic">Jiringlash musiqasini o\'zgartirish</string>
+    <string name="selected">Tanlandi</string>
 </resources>

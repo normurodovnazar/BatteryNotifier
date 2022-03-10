@@ -1,4 +1,4 @@
-package com.normurodov_nazar.batterynotifier;
+package com.normurodov_nazar.batterynotifier.Receivers;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -11,6 +11,10 @@ import android.net.Uri;
 import android.os.BatteryManager;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
+
+import com.normurodov_nazar.batterynotifier.Functions.Hey;
+import com.normurodov_nazar.batterynotifier.Functions.Key;
+import com.normurodov_nazar.batterynotifier.R;
 
 import java.io.File;
 import java.util.Calendar;
@@ -58,14 +62,13 @@ public class AlarmReceiver extends BroadcastReceiver {
         audioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
         vibrator = (Vibrator) context.getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);vibrator.vibrate(500);
         File file = new File(preferences.getString(Key.path,"as"));
+        Uri uri;
         if (file.exists()){
-            Uri uri = Uri.fromFile(file);
-            playCustomMusic(uri);
+            uri = Uri.fromFile(file);
         }else {
-            Uri uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE);
-            if (uri!=null) playCustomMusic(uri);
-            else playDefaultMusic();
+            uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE);
         }
+        if (uri!=null) playCustomMusic(uri);else playDefaultMusic();
         vibrateTimer = new CountDownTimer(10000,2000) {
             @Override
             public void onTick(long l) {
@@ -104,9 +107,7 @@ public class AlarmReceiver extends BroadcastReceiver {
 
     private void playCustomMusic(Uri uri) {
         mediaPlayer = MediaPlayer.create(context,uri);
-        mediaPlayer.setOnPreparedListener(mp -> {
-            if (mediaPlayer!=null) mediaPlayer.start(); else playDefaultMusic();
-        });
+        if (mediaPlayer!=null) mediaPlayer.setOnPreparedListener(mp -> mediaPlayer.start()); else playDefaultMusic();
     }
 
     private void startTimers() {
@@ -116,10 +117,8 @@ public class AlarmReceiver extends BroadcastReceiver {
     }
 
     private void playDefaultMusic(){
-        mediaPlayer = MediaPlayer.create(context,R.raw.m);
-        mediaPlayer.setOnPreparedListener(mp -> {
-            if (mediaPlayer!=null) mediaPlayer.start();
-        });
+        mediaPlayer = MediaPlayer.create(context, R.raw.m);
+        mediaPlayer.setOnPreparedListener(mp -> mediaPlayer.start());
     }
 
     private void stopAll() {
